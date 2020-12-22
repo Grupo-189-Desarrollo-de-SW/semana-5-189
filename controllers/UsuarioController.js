@@ -67,8 +67,8 @@ module.exports = {
         {
           nombre: req.body.nombre,
           email: req.body.email,
-          rol: req.body.rol,
-          password: bcrypt.hashSync(req.body.password, 10),
+          //rol: req.body.rol,
+          //password: bcrypt.hashSync(req.body.password, 10),
         },
         { where: { id: req.body.id } }
       );
@@ -100,7 +100,7 @@ module.exports = {
   //cambiar al estado desactivado(0) el usuario
   deactivate: async (req, res, next) => {
     try {
-      const reg = await models.Articulo.update(
+      const reg = await models.Usuario.update(
         { estado: 0 },
         { where: { id: req.body.id } }
       );
