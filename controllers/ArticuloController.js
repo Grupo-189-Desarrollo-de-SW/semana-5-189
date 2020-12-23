@@ -39,7 +39,12 @@ module.exports = {
   update: async (req, res, next) => {
     try {
       const reg = await models.Articulo.update(
-        { nombre: req.body.nombre, descripcion: req.body.descripcion },
+        { 
+          nombre: req.body.nombre, 
+          descripcion: req.body.descripcion, 
+          codigo: req.body.codigo,
+          categoriaId: req.body.categoria
+        },
         { where: { id: req.body.id } }
       );
       res.status(200).json(reg);
