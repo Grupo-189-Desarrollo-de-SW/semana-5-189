@@ -67,8 +67,8 @@ module.exports = {
         {
           nombre: req.body.nombre,
           email: req.body.email,
-          //rol: req.body.rol,
-          //password: bcrypt.hashSync(req.body.password, 10),
+          rol: req.body.rol,
+          password: bcrypt.hashSync(req.body.password, 10),
         },
         { where: { id: req.body.id } }
       );
